@@ -7,8 +7,7 @@ function Search() {
 
   //handling the search
   const updatedDeboundcedText = dbounce((text) => {
-    dispatch(filterBySearch(text));
-    console.log(text);
+    dispatch(filterBySearch(text.toLowerCase()));
   });
 
   //Debounce function
