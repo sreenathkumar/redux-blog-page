@@ -17,7 +17,7 @@ const postData = [
   {
     id: 2,
     title: "How to use search engine optimization to drive sales",
-    author: "Michael Sch",
+    author: "Michael Sch 2",
     category: "SEO",
     images: {
       author_image:
@@ -49,7 +49,7 @@ const postData = [
   {
     id: 4,
     title: "How to oraganize your post for easy access",
-    author: "Bradon Shahi",
+    author: "Bruce Lee  ",
     category: "UI/UX",
     images: {
       author_image:

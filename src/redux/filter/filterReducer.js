@@ -11,24 +11,30 @@ const initialState = postData;
 const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case FILTER_BY_CATEGORY: {
-      let filteredArray = state.filter(
+      let filteredArray = initialState.filter(
         (item) => item.category === action.payload
       );
+      console.log(`ini arr:${JSON.stringify(initialState)}`);
+      console.log(`updated arr:${JSON.stringify(state)}`);
       return filteredArray;
     }
     case FILTER_BY_AUTHOR: {
-      let filteredArray = state.filter(
+      let filteredArray = initialState.filter(
         (item) => item.author === action.payload
       );
+      console.log(`ini arr:${JSON.stringify(initialState)}`);
+      console.log(`updated arr:${JSON.stringify(state)}`);
       return filteredArray;
     }
     case FILTER_BY_SEARCH:
       if (action.payload !== "") {
-        let filteredArray = state.filter((item) => {
+        let filteredArray = initialState.filter((item) => {
           return (
             item.title.toLowerCase().includes(action.payload) !== false && item
           );
         });
+        console.log(`ini arr:${JSON.stringify(initialState)}`);
+        console.log(`updated arr:${JSON.stringify(state)}`);
         return filteredArray;
       } else {
         return initialState;
