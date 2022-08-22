@@ -49,7 +49,7 @@ const postData = [
   {
     id: 4,
     title: "How to oraganize your post for easy access",
-    author: "Bruce Lee  ",
+    author: "Bruce Lee ",
     category: "UI/UX",
     images: {
       author_image:
