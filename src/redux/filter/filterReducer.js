@@ -14,16 +14,14 @@ const filterReducer = (state = initialState, action) => {
       let filteredArray = initialState.filter(
         (item) => item.category === action.payload
       );
-      console.log(`ini arr:${JSON.stringify(initialState)}`);
-      console.log(`updated arr:${JSON.stringify(state)}`);
+
       return filteredArray;
     }
     case FILTER_BY_AUTHOR: {
       let filteredArray = initialState.filter(
         (item) => item.author === action.payload
       );
-      console.log(`ini arr:${JSON.stringify(initialState)}`);
-      console.log(`updated arr:${JSON.stringify(state)}`);
+
       return filteredArray;
     }
     case FILTER_BY_SEARCH:
@@ -33,8 +31,7 @@ const filterReducer = (state = initialState, action) => {
             item.title.toLowerCase().includes(action.payload) !== false && item
           );
         });
-        console.log(`ini arr:${JSON.stringify(initialState)}`);
-        console.log(`updated arr:${JSON.stringify(state)}`);
+
         return filteredArray;
       } else {
         return initialState;
