@@ -1,5 +1,9 @@
 import postData from "../../assets/post_data";
-import { FILTER_BY_CATEGORY, FILTER_BY_AUTHOR } from "./actionTypes";
+import {
+  FILTER_BY_CATEGORY,
+  FILTER_BY_AUTHOR,
+  FILTER_BY_SEARCH,
+} from "./actionTypes";
 
 //The post data
 const initialState = postData;
@@ -18,6 +22,17 @@ const filterReducer = (state = initialState, action) => {
       );
       return filteredArray;
     }
+    case FILTER_BY_SEARCH:
+      if (action.payload !== "") {
+        let filteredArray = state.filter((item) => {
+          return (
+            item.title.toLowerCase().includes(action.payload) !== false && item
+          );
+        });
+        return filteredArray;
+      } else {
+        return initialState;
+      }
     default: {
       return state;
     }

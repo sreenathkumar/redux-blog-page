@@ -6,16 +6,17 @@ const initialState = postData;
 const searchReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEARCH:
-      let filteredArray = state.filter(
-        (item) => item.title.search(action.payload) && item
-      );
-      if (filteredArray) {
+      if (action.payload !== "") {
+        let filteredArray = state.filter((item) => {
+          return item.title.includes(action.payload) !== false && item;
+        });
+
         return filteredArray;
       } else {
-        return state;
+        return initialState;
       }
     default:
-      return state;
+      return initialState;
   }
 };
 export default searchReducer;
